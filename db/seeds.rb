@@ -9,15 +9,18 @@
 Song.destroy_all
 Genre.destroy_all
 User.destroy_all
+
 @admin = User.create!(username: 'arya', email: 'arya@email.com', password: '123456')
 
 puts "#{User.count} User created"
 
-genre1 = Genre.create! name: 'Rock', title: 'Rock'
-puts "#{Genre.count} genres created"
+@rock = Genre.create!(name: 'ROCK')
+puts "#{Genre.count} Genres created"
 
-song1 = Song.new name: 'ELEPHANNT', description: 'A LOT '
+@rockey = Song.create!(name: 'Rock', user: @admin, description: 'very buffed.',
+                       img_url: '', genre: @rock)
 
-# associating the tables
+# @rainbow_trout.region << @s_america
+# @rainbow_trout.environment << @fresh_water
 
-genre1.songs << song1
+puts "#{Song.count} Songs created"

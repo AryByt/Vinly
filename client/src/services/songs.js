@@ -27,7 +27,7 @@ export const postSong = async (genreId, songData) => {
   }
 };
 
-export const putSong = async (genreId, songId, songData) => {
+export const updateSong = async (genreId, songId, songData) => {
   try {
     const resp = await api.put(`/genres/${genreId}/songs/${songId}`, { song: songData });
     return resp.data;
@@ -36,9 +36,9 @@ export const putSong = async (genreId, songId, songData) => {
   }
 };
 
-export const deleteSong = async (genreId, songId) => {
+export const deleteSong = async songId => {
   try {
-    const resp = await api.delete(`/genres/${genreId}/songs/${songId}`);
+    const resp = await api.delete(`/songs/${songId}`);
     return resp.data;
   } catch (error) {
     console.log(error);

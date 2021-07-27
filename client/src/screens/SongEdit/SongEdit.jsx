@@ -1,97 +1,53 @@
-import { useParams, Redirect } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getAllSongs } from '../../services/songs';
+import { useParams } from 'react-router-dom';
 
-import { getOneSong, putSong } from '../../services/songs';
-
-const SongEdit = props => {
-  const [genres, setGenres] = useState([]);
-
-  const [song, setSong] = useState({
+function SongEdit(props) {
+  const [formData, setFormData] = useState({
     name: '',
-    description: '',
-    img_url: '',
+    title: '',
   });
 
-  const [isUpdated, setUpdated] = useState(false);
-  let { id } = useParams();
+  const { name, description } = formData;
+  const { allSongs, editSong, removeSong } = props;
+  const { songId, id } = useParams();
 
   useEffect(() => {
-    const fetchSong = async () => {
-      const song = await getOneSong(id);
-      setSong(song);
+    const prefillFormData = () => {
+      if (allSongs.length) {
+        const oneSong = allSongs.find(song => song.id === Number(songId));
+        const { name, description } = oneSong;
+        setFormData({ name, description });
+      }
     };
-    fetchSong();
-  }, [id]);
+    prefillFormData();
+  }, [allSongs, songId]);
 
-  const handleChange = event => {
-    const { name, value } = event.target;
-    setSong({
-      ...song,
-      [name]: value,
-    });
+  const handleChange = e => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
-  useEffect(() => {
-    const fetchDropDowns = async () => {
-      const genres = await getAllSongs();
-
-      setGenres(genres);
-    };
-    fetchDropDowns();
-  }, []);
-
-  const handleSubmit = async event => {
-    event.preventDefault();
-    const updated = await putSong(id, song);
-    setUpdated(updated);
+  const handleSubmit = e => {
+    e.preventDefault();
+    editSong(id, songId, formData);
   };
-
-  if (isUpdated) {
-    return <Redirect to={`/songs/:id`} />;
-  }
 
   return (
     <>
-      <form
-        className="flex space-y-6 flex-col justify-center items-center border-8 border-black-100 mb-52 bg-green-500"
-        onSubmit={handleSubmit}
-        onChange={handleChange}
-      >
-        <input
-          className="mt-5 bg-green-200"
-          placeholder="name"
-          value={song.name}
-          name="name"
-          required
-        />
-        <input
-          className="mt-5 bg-green-200"
-          placeholder="Image Link"
-          value={song.img_url}
-          name="img_url"
-        />
-        <input
-          className="mt-5 bg-green-200"
-          placeholder="description"
-          value={song.description}
-          name="description"
-          required
-        />
-
-        <select name="genre_id">
-          <option default hidden required>
-            select the genre
-          </option>
-          {genres && genres.map(genre => <option value={genre.id}>{genre.name}</option>)}
-        </select>
-
-        <button type="submit" className="create-button">
-          Edit
-        </button>
+      <h2>Edit Song</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input type="text" name="name" value={name} onChange={handleChange} />
+        </label>
+        <label>
+          Description:
+          <input type="text" name="description" value={description} onChange={handleChange} />
+        </label>
+        <button>Submit</button>
       </form>
+      <button onClick={() => removeSong(songId)}>Delete Song</button>
     </>
   );
-};
-
+}
 export default SongEdit;

@@ -1,55 +1,39 @@
 import { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
-import { getOneSong, deleteSong } from '../services/species';
-import { useParams, Link } from 'react-router-dom';
-
-import { useHistory } from 'react-router-dom';
-
-const SongDetail = props => {
+function GenreDetail(props) {
+  const { allSongs } = props;
   const [song, setSong] = useState(null);
-  const [isLoaded, setLoaded] = useState(false);
+  const { songId, id } = useParams();
 
-  const history = useHistory();
-  const { id } = useParams();
   useEffect(() => {
-    const fetchSong = async () => {
-      const song = await getOneSong(id);
-      setSong(song);
-      setLoaded(true);
-    };
-    fetchSong();
-  }, [id]);
+    if (allSongs.length) {
+      const oneSong = allSongs.find(song => song.id === Number(songId));
+      setSong(oneSong);
+    }
+  }, [allSongs, songId]);
 
-  if (!isLoaded) {
-    return <h1>Loading...</h1>;
-  }
-
-  const handleDelete = async () => {
-    const res = await deleteSong(id);
-    console.log(res);
-    history.push('/songs');
-  };
   return (
-    <>
-      <div>
-        <img src={song.img_url} alt={song.name} />
-
-        <div>
-          <div>
-            <div>{song.name}</div>
-            <div>{song.description}</div>
-            <div>{song.genre}</div>
-          </div>
-          <div>
-            <Link to={`/songs/${song.id}/edit`}>Edit</Link>
-            <button onClick={() => deleteSong(song.id)} onClick={handleDelete}>
-              Delete
-            </button>
-          </div>
-        </div>
-      </div>
-    </>
+    <div>
+      {song && (
+        <>
+          <h4>{song.name}</h4>
+          <h4>{song.description}</h4>
+          {song.songs?.map(song => (
+            <Link to={`/genres/${song.id}/songs/${song.id}`}>
+              <p>Name: {song.name}</p>
+            </Link>
+          ))}
+          <Link to={`/genres/${id}/songs/${songId}/edit`}>
+            <button>Edit </button>
+          </Link>
+          <Link to={`/genres/${id}/songs/new`}>
+            <button>Add Song</button>
+          </Link>
+        </>
+      )}
+    </div>
   );
-};
+}
 
-export default SongDetail;
+export default GenreDetail;

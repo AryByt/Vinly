@@ -19,7 +19,7 @@ function GenreDetail(props) {
       {genre && (
         <>
           <h4>{genre.name}</h4>
-          <h4>{genre.description}</h4>
+          <h4>{genre.title}</h4>
           {genre.songs?.map(song => (
             <Link to={`/genres/${genre.id}/songs/${song.id}`}>
               <p>Name: {song.name}</p>

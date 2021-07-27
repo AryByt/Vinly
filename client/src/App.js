@@ -6,6 +6,7 @@ import Layout from './layouts/Layout';
 import Login from './screens/SignIn/Login';
 import Register from './screens/SingUp/Register';
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth';
+
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();

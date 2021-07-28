@@ -79,13 +79,13 @@ export default function MainContainer() {
   return (
     <Switch>
       <Route path="/genres/:id/songs/:songId/edit">
-        <SongEdit allSongs={allSongs} editSong={editSong} removeSong={removeSong} />
+        <SongEdit allSongs={allSongs} editSong={editSong} />
       </Route>
       <Route path="/genres/:id/songs/new">
         <SongCreate createSong={createSong} />
       </Route>
       <Route path="/genres/:id/songs/:songId">
-        <SongDetail allSongs={allSongs} />
+        <SongDetail allSongs={allSongs} removeSong={removeSong} />
       </Route>
       <Route path="/genres/:id">
         <GenreDetail allGenres={allGenres} />

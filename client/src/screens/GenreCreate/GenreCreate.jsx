@@ -3,10 +3,9 @@ import { useState } from 'react';
 function CreateGenre(props) {
   const [formData, setFormData] = useState({
     name: '',
-    title: '',
   });
 
-  const { name, title } = formData;
+  const { name } = formData;
   const { createGenre } = props;
 
   const handleChange = e => {
@@ -24,14 +23,9 @@ function CreateGenre(props) {
       <h2>Add Genre</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:
+          Genre:
           <input type="text" name="name" value={name} onChange={handleChange} />
         </label>
-        <label>
-          Title:
-          <input type="text" name="city" value={title} onChange={handleChange} />
-        </label>
-        <button>Submit</button>
       </form>
     </>
   );

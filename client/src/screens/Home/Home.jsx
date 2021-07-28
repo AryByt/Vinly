@@ -35,19 +35,36 @@ export default function Home() {
           </p>
           <div className="p-5 flex justify-evenly">
             <button className="p-4 px-6 border-red-700 border-2 bg-red-500 rounded-full text-white">
-              Buy
+              <a
+                href="https://www.amazon.com/Miseducation-Lauryn-Hill/dp/B01BTQZKKS/ref=sr_1_1?crid=2VKC8P5RS179F&dchild=1&keywords=the+miseducation+of+lauryn+hill+vinyl&qid=1627461558&s=music&sprefix=The+Miseducation+Of+Lauryn+hill%2Cpopular%2C201&sr=1-1"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Buy
+              </a>
             </button>
-            <button className="p-4 px-6 bg-white border-2 rounded-full text-gray-400">Info</button>
+            <button className="p-4 px-6 bg-white border-2 rounded-full text-gray-400">
+              <Link to="/register">Info</Link>
+            </button>
           </div>
         </div>
+
         <div className=" flex flex-col justify-center text-left">
-          <h1 className="p-5 text-red-500 text-xl">Buy</h1>
+          <h1 className="p-5 text-red-500 text-xl">Thriller</h1>
           <p className="p-5">The most famous well known album ever.</p>
           <div className="p-5 flex justify-evenly">
             <button className="p-4 px-6 border-red-700 border-2 bg-red-500 rounded-full text-white">
-              Thriller
+              <a
+                href="https://www.amazon.com/Thriller-Michael-Jackson/dp/B01B2M9H76/ref=sr_1_1?crid=XYDJPQ0UINCI&dchild=1&keywords=thriller+vinyl&qid=1627461368&s=music&sprefix=thriller+vin%2Cpopular%2C190&sr=1-1"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Buy
+              </a>
             </button>
-            <button className="p-4 px-6 bg-white border-2 rounded-full text-gray-400">Info</button>
+            <button className="p-4 px-6 bg-white border-2 rounded-full text-gray-400">
+              <Link to="/register">Info</Link>
+            </button>
           </div>
         </div>
         <img

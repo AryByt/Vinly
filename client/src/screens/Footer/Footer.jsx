@@ -1,12 +1,13 @@
 import React from 'react';
 import logo from '../../assets/images/logo.png';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <div className="bg-black text-white">
       <div className="grid grid-cols-3">
         <p>Contact</p>
-        <p>Products</p>
+        <Link to="/genres">Products</Link>
         <p>Websites</p>
         <a
           className="flex flex-row justify-center"
@@ -20,8 +21,10 @@ export default function Footer() {
           </a>
         </a>
 
-        <p>Vinyl</p>
-        <p>Sources</p>
+        <Link to="/about">About</Link>
+        <a href="https://google.com/" target="_blank" rel="noreferrer">
+          Sources
+        </a>
       </div>
       <div>
         <img className=" h-14 flex object-cover" src={logo} alt="logo" />

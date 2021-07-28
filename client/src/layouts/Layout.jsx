@@ -7,20 +7,20 @@ export default function Layout(props) {
 
   return (
     <div>
-      <div className="bg-black text-white text-xl flex flex-col lg:flex lg:flex-row lg:justify-evenly">
+      <div className="bg-black text-white">
         <div className="w-full">
           <img className="h-14" src={logo} alt="logo" />
         </div>
 
-        <header className="">
+        <header className="uppercase">
           {currentUser ? (
-            <div className="flex flex-row justify-evenly">
-              <Link className="px-2" to="/">
-                Vinly
-              </Link>
-              <div className="flex flex-row ">
-                <p className="p-4">{currentUser.username}</p>
-                <button className="p-4" onClick={handleLogout}>
+            <div>
+              <div className="flex flex-row justify-center font-extrabold">
+                <Link to="/home">Vinly</Link>
+              </div>
+              <p className="flex flex-row justify-end ">{currentUser.username}</p>
+              <div className="flex flex-row justify-end">
+                <button className="" onClick={handleLogout}>
                   Logout
                 </button>
               </div>
@@ -42,14 +42,19 @@ export default function Layout(props) {
             </div>
           )}
           {currentUser && (
-            <nav className="flex flex-row text-center justify-center">
-              <Link className="px-2" to="/genres">
-                Genres
-              </Link>
-              <Link className="px-2" to="/songs">
-                Vinyls
-              </Link>
-            </nav>
+            <div>
+              <nav className="flex flex-row justify-start">
+                <Link className="px-2" to="/">
+                  Home
+                </Link>
+                <Link className="px-3" to="/genres">
+                  Genres
+                </Link>
+                <Link className="px-3" to="/songs">
+                  Vinyls
+                </Link>
+              </nav>
+            </div>
           )}
         </header>
       </div>

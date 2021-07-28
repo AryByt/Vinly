@@ -29,7 +29,7 @@ puts "#{Genre.count} Genres created"
                       year: '2001', price: '100', artist: 'Wilco', genre: @genre1)
 
 @song2 = Song.create!(name: 'Blonde on Blond', user: @admin, description: 'The world-renowned Bob Dylan may be the greatest lyricist of all time and so owning one of his albums is a must. Blonde on Blonde was released in 1966 and is adorned with the famous portrait of a pensive Bob Dylan in a scarf and coat.',
-                      img_url: 'https://i0.wp.com/img.cdandlp.com/2018/04/imgL/119136177.jpg',    
+                      img_url: 'https://i0.wp.com/img.cdandlp.com/2018/04/imgL/119136177.jpg',
                       buy: 'https://www.amazon.com/dp/B00007FP9E?tag=aurma-20',
                       year: '2014', price: '80', artist: 'Bob Dylan', genre: @genre2)
 

@@ -4,18 +4,17 @@ function Genres(props) {
   const { allGenres } = props;
   return (
     <div>
-      <h1>All Genres</h1>
-      {allGenres.map((genre, index) => (
-        <Link to={`/genres/${genre.id}`}>
-          <div key={index}>
-            <h4>{genre.name}</h4>
-            <p>{genre.title}</p>
-          </div>
-        </Link>
-      ))}
-      {/* <Link to="/genres/new">
-        <button>Add Genre</button>
-      </Link> */}
+      <h1 className="flex flex-row justify-center bg-gray-100">All Genres</h1>
+      <div className="flex flex-row justify-evenly bg-red-300">
+        {allGenres.map((genre, index) => (
+          <Link to={`/genres/${genre.id}`}>
+            <div key={index}>
+              <h4>{genre.name}</h4>
+              <p>{genre.title}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }

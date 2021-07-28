@@ -8,6 +8,7 @@ import { getAllSongs, deleteSong, postSong, updateSong } from '../../services/so
 import SongCreate from '../../screens/SongCreate/SongCreate';
 import SongDetail from '../../screens/SongDetail/SongDetail';
 import Songs from '../../screens/Songs/Songs';
+import Home from '../../screens/Home/Home';
 
 export default function MainContainer() {
   const [allGenres, setAllGenres] = useState([]);
@@ -80,14 +81,12 @@ export default function MainContainer() {
         <SongEdit allSongs={allSongs} editSong={editSong} removeSong={removeSong} />
       </Route>
       <Route path="/genres/:id/songs/new">
-        <h1>Hello</h1>
         <SongCreate createSong={createSong} />
       </Route>
       <Route path="/genres/:id/songs/:songId">
         <SongDetail allSongs={allSongs} />
       </Route>
       <Route path="/genres/:id">
-        {console.log(allGenres)}
         <GenreDetail allGenres={allGenres} />
       </Route>
       <Route path="/genres">
@@ -95,6 +94,9 @@ export default function MainContainer() {
       </Route>
       <Route path="/songs">
         <Songs allSongs={allSongs} />
+      </Route>
+      <Route path="/">
+        <Home />
       </Route>
     </Switch>
   );

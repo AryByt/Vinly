@@ -14,23 +14,19 @@ function GenreDetail(props) {
   }, [allGenres, id]);
 
   return (
-    <div>
+    <div className="">
       {genre && (
-        <>
-          <h4>{genre.name}</h4>
-          <h4>{genre.title}</h4>
+        <div className="flex flex-col">
+          <h4 className="pb-5">{genre.name}</h4>
           {genre.songs?.map(song => (
             <Link to={`/genres/${genre.id}/songs/${song.id}`}>
-              <p>Name: {song.name}</p>
+              <p>{song.name}</p>
             </Link>
           ))}
-          <Link to={`/genres/${id}/edit`}>
-            <button>Edit Genre</button>
-          </Link>
           <Link to={`/genres/${genre.id}/songs/new`}>
             <button>Add Song</button>
           </Link>
-        </>
+        </div>
       )}
     </div>
   );

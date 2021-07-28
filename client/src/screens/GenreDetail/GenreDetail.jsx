@@ -10,7 +10,6 @@ function GenreDetail(props) {
     if (allGenres.length) {
       const oneGenre = allGenres.find(genre => genre.id === Number(id));
       setGenre(oneGenre);
-      console.log(oneGenre.songs);
     }
   }, [allGenres, id]);
 

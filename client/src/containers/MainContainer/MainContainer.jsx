@@ -3,10 +3,11 @@ import { Route, Switch, useHistory } from 'react-router-dom';
 import Genres from '../../screens/Genres/Genres';
 import GenreDetail from '../../screens/GenreDetail/GenreDetail';
 import SongEdit from '../../screens/SongEdit/SongEdit';
-import { getAllGenre, deleteGenre } from '../../services/genres';
+import { getAllGenre } from '../../services/genres';
 import { getAllSongs, deleteSong, postSong, updateSong } from '../../services/songs';
 import SongCreate from '../../screens/SongCreate/SongCreate';
 import SongDetail from '../../screens/SongDetail/SongDetail';
+import Songs from '../../screens/Songs/Songs';
 
 export default function MainContainer() {
   const [allGenres, setAllGenres] = useState([]);
@@ -42,6 +43,7 @@ export default function MainContainer() {
           : genre
       )
     );
+    fetchSongs();
     history.push('/genres');
   };
 
@@ -56,20 +58,19 @@ export default function MainContainer() {
   const editSong = async (genreId, songId, formData) => {
     const updatedSong = await updateSong(genreId, songId, formData);
     console.log(updatedSong);
-    // setAllGenres(prevState =>
-    //   prevState.map(genre =>
-    //     genre.id === Number(genreId)
-    //       ? {
-    //           ...genre,
-    //           songs: genre.songs.map(song => {
-    //             return song.id === songId ? updatedSong : song;
-    //           }),
-    //         }
-    //       : genre
-    //   )
-    // );
+    setAllGenres(prevState =>
+      prevState.map(genre =>
+        genre.id === Number(genreId)
+          ? {
+              ...genre,
+              songs: genre.songs.map(song => {
+                return song.id === Number(songId) ? updatedSong : song;
+              }),
+            }
+          : genre
+      )
+    );
     fetchSongs();
-    fetchGenres();
     history.push(`/genres/${genreId}`);
   };
   console.log(allGenres);
@@ -91,6 +92,9 @@ export default function MainContainer() {
       </Route>
       <Route path="/genres">
         <Genres allGenres={allGenres} />
+      </Route>
+      <Route path="/songs">
+        <Songs allSongs={allSongs} />
       </Route>
     </Switch>
   );

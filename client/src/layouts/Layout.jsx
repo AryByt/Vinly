@@ -19,7 +19,7 @@ export default function Layout(props) {
         {currentUser && (
           <nav>
             <Link to="/genres">Genres</Link>
-            <Link to="/Songs">Songs</Link>
+            <Link to="/songs">Songs</Link>
           </nav>
         )}
       </header>

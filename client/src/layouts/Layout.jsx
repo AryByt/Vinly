@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import Footer from '../screens/Footer/Footer';
 export default function Layout(props) {
   const { currentUser, handleLogout } = props;
 
   return (
     <div>
-      <div className="bg-black text-white text-xl">
-        <img className="w-12 h-12 flex object-contain" src={logo} alt="logo" />
+      <div className="bg-black text-white text-xl flex flex-col lg:flex lg:flex-row lg:justify-evenly">
+        <div className="w-full">
+          <img className="h-14" src={logo} alt="logo" />
+        </div>
 
         <header className="">
           {currentUser ? (
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-evenly">
               <Link className="px-2" to="/">
                 Vinly
               </Link>
@@ -24,6 +27,9 @@ export default function Layout(props) {
             </div>
           ) : (
             <div className="flex flex-row justify-end">
+              <Link className="px-2" to="/">
+                Home
+              </Link>
               <Link className="px-2" to="/login">
                 Login
               </Link>
@@ -31,7 +37,7 @@ export default function Layout(props) {
                 Register
               </Link>
               <Link className="px-2" to="/register">
-                Add Vinyl
+                AddVinyl
               </Link>
             </div>
           )}
@@ -48,6 +54,7 @@ export default function Layout(props) {
         </header>
       </div>
       <div>{props.children}</div>
+      <Footer />
     </div>
   );
 }

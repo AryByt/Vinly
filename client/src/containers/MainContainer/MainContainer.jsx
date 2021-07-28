@@ -9,6 +9,7 @@ import SongCreate from '../../screens/SongCreate/SongCreate';
 import SongDetail from '../../screens/SongDetail/SongDetail';
 import Songs from '../../screens/Songs/Songs';
 import Home from '../../screens/Home/Home';
+import About from '../../screens/About/About';
 
 export default function MainContainer() {
   const [allGenres, setAllGenres] = useState([]);
@@ -94,6 +95,9 @@ export default function MainContainer() {
       </Route>
       <Route path="/songs">
         <Songs allSongs={allSongs} />
+      </Route>
+      <Route path="/about">
+        <About />
       </Route>
       <Route path="/">
         <Home />

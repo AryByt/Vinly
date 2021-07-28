@@ -7,7 +7,7 @@ export default function Layout(props) {
 
   return (
     <div>
-      <div className="lg:bg-black lg:text-white  md:text-l md:bg-red-500">
+      <div className="lg:bg-black lg:text-white md:text-l md:bg-red-500 ">
         <div className="lg:w-full sm:w-1/12">
           <img className="lg:h-14 sm:h-8 md:h-10" src={logo} alt="logo" />
         </div>

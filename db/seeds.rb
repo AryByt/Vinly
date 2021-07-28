@@ -60,5 +60,5 @@ puts "#{Genre.count} Genres created"
                       img_url: 'https://upload.wikimedia.org/wikipedia/en/f/f1/Bob_Dylan_-_The_Times_They_Are_a-Changin%27.jpg', genre: @genre7)
 @song10 = Song.create!(name: 'WHATS GOING ON', buy: 'https://www.dutchvinyl.com.au/collections/best-soul-albums-of-all-time-the-essential-records-you-need-to-hear/products/marvin-gaye-whats-going-on-32099',
                        year: '1971,', price: '49', artist: 'Marvin Gaye', user: @admin, description: 'Marvin Gaye was a controversial and at the same time enormously successful personality. In his early years, the son of a priest tried his hand at a variety of chart typical songs, in the tradition of the Motown label. But with time he found his way less and less in the triangle of tax investigations, demanding wives and music that meant nothing to him. The self-produced album What is Going On from 1971 changed everything.',
-                       img_url: 'https://upload.wikimedia.org/wikipedia/en/f/f1/Bob_Dylan_-_The_Times_They_Are_a-Changin%27.jpg', genre: @genre2)
+                       img_url: 'https://cdn.shopify.com/s/files/1/1474/5258/products/1453_f921d760-6d73-4915-8572-2e4ea87c14fb_930x948.jpg?v=1627022912', genre: @genre5)
 puts "#{Song.count} Songs created"

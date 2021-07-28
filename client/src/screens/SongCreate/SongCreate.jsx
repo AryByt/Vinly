@@ -31,7 +31,7 @@ function SongCreate(props) {
 
   return (
     <div className=" min-h-screen flex flex-col justify-center items-center bg-home bg-cover">
-      <h2>Add Song</h2>
+      <h2 className="text-4xl font-mono ">Add Song</h2>
       <form
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 text-black"
         onSubmit={handleSubmit}
@@ -109,7 +109,9 @@ function SongCreate(props) {
           </label>
         </div>
         <GenreCreate />
-        <button>Submit</button>
+        <button className="p-2 px-2 border-red-700 border-2 bg-red-500 rounded-full text-white mt-5">
+          Submit
+        </button>
       </form>
     </div>
   );

@@ -110,7 +110,9 @@ function SongEdit(props) {
             />
           </label>
         </div>
-        <button>Submit</button>
+        <button className="p-4 px-6 border-red-700 border-2 bg-red-500 rounded-full text-white">
+          Submit
+        </button>
       </form>
     </div>
   );

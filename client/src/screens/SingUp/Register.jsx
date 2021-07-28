@@ -18,22 +18,19 @@ export default function Register(props) {
   };
 
   return (
-    <div className=" min-h-screen flex flex-col justify-center items-center bg-home bg-cover">
+    <div className=" min-h-screen flex flex-col  justify-center items-center bg-home bg-cover">
       <form
-        className="bg-white md:bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-white md:bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4 sm:text-red-800 lg:text-blue-700 md:text-purple-800"
         onSubmit={event => {
           event.preventDefault();
           handleRegister(formData);
         }}
       >
         <div className="mb-4">
-          <label
-            className="block text-gray-700 md:text-white text-sm font-bold mb-2"
-            for="username"
-          >
+          <label className="block text-gray-700 text-sm font-bold mb-2">
             Username:
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 md:text-white leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               name="username"
               placeholder="Username"
@@ -43,10 +40,10 @@ export default function Register(props) {
           </label>
         </div>
         <div className=" my-5">
-          <label className="block text-gray-700 md:text-white text-sm font-bold mb-2" for="email">
+          <label className="block text-gray-700  text-sm font-bold mb-2">
             Email:
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 md:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  mb-3 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               name="email"
               value={email}
@@ -62,7 +59,7 @@ export default function Register(props) {
           >
             Password:
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 md:text-white mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  mb-3 leading-tight focus:outline-none focus:shadow-outline"
               placeholder="*****"
               type="password"
               name="password"

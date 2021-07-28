@@ -14,20 +14,25 @@ function GenreDetail(props) {
   }, [allGenres, id]);
 
   return (
-    <div className="">
-      {genre && (
-        <div className="flex flex-col">
-          <h4 className="pb-5">{genre.name}</h4>
-          {genre.songs?.map(song => (
-            <Link to={`/genres/${genre.id}/songs/${song.id}`}>
-              <p>{song.name}</p>
-            </Link>
-          ))}
-          <Link to={`/genres/${genre.id}/songs/new`}>
-            <button>Add Song</button>
-          </Link>
+    <div className="min-h-screen ">
+      <div className="flex flex-row justify-center b text-black">
+        <div className="grid grid-cols-4  min-h-screen b">
+          {genre && (
+            <div className="p-3">
+              <h4 className="pb-5">{genre.name}</h4>
+              <img src={genre.title} className="" alt="nada" />
+              {genre.songs?.map(song => (
+                <Link to={`/genres/${genre.id}/songs/${song.id}`}>
+                  <p>{song.name}</p>
+                </Link>
+              ))}
+              <Link to={`/genres/${genre.id}/songs/new`}>
+                <button>Add Song</button>
+              </Link>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 }

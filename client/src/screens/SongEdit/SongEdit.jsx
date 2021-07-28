@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import GenreCreate from '../../screens/GenreCreate/GenreCreate';
 function SongEdit(props) {
   const [formData, setFormData] = useState({
     name: '',
@@ -33,39 +32,84 @@ function SongEdit(props) {
   };
 
   return (
-    <div className="min-h-screen bg">
-      <h2>Edit Vinyl</h2>
-      <form className="bg-gray-100" onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
-
-        <label>
-          Description:
-          <input type="text" name="description" value={description} onChange={handleChange} />
-        </label>
-
-        <label>
-          Image:
-          <input type="text" name="img_url" value={img_url} onChange={handleChange} />
-        </label>
-
-        <label>
-          Artist:
-          <input type="text" name="artist" value={artist} onChange={handleChange} />
-        </label>
-
-        <label>
-          Price:
-          <input type="text" name="price" value={price} onChange={handleChange} />
-        </label>
-
-        <label>
-          Link to sell:
-          <input type="text" name="buy" value={buy} onChange={handleChange} />
-        </label>
-        <GenreCreate />
+    <div className=" min-h-screen flex flex-col justify-center items-center bg-home bg-cover">
+      <h2>Add Song</h2>
+      <form
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 text-black"
+        onSubmit={handleSubmit}
+      >
+        <div className="mb-4">
+          <label className="block text-gray-700 md:text-black text-sm font-bold mb-2">
+            Name:
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 md:text-black leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className=" my-5">
+          <label className="block text-gray-700  text-sm font-bold mb-2" for="Description">
+            Description:
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              name="description"
+              value={description}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700  text-sm font-bold mb-2" for="Image">
+            Image:
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              name="img_url"
+              value={img_url}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700  text-sm font-bold mb-2" for="Artist">
+            Artist:
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              name="artist"
+              value={artist}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700  text-sm font-bold mb-2" for="Price">
+            Price:
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              name="price"
+              value={price}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
+        <div className="mb-6">
+          <label className="block text-gray-700  text-sm font-bold mb-2" for="Price">
+            Link to sell:
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              name="buy"
+              value={buy}
+              onChange={handleChange}
+            />
+          </label>
+        </div>
         <button>Submit</button>
       </form>
     </div>

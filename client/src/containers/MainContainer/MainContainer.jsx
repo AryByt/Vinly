@@ -73,7 +73,7 @@ export default function MainContainer() {
       )
     );
     fetchSongs();
-    history.push(`/genres/${genreId}`);
+    history.push('/songs/');
   };
   console.log(allGenres);
   return (

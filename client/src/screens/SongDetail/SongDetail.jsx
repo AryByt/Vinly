@@ -15,12 +15,12 @@ function GenreDetail(props) {
   }, [allSongs, songId]);
 
   return (
-    <div>
-      <div>
+    <div className="bg-home bg-cover">
+      <div className="">
         {song && (
           <div>
             <div className="p-10 justify-center flex">
-              <div className="max-w-sm rounded overflow-hidden shadow-lg">
+              <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
                 <img className="w-full b" src={song.img_url} alt={song.name} />
                 <div classNae="px-6 py-4">
                   <div className="font-bold text-xl mb-2">{song.name}</div>
@@ -46,14 +46,23 @@ function GenreDetail(props) {
                 <p>Name: {song.name}</p>
               </Link>
             ))}
-            <div className="flex flex-row justify-evenly">
+            <div className="flex flex-row justify-evenly mt-10">
               <Link to={`/genres/${id}/songs/${songId}/edit`}>
-                <button>Edit</button>
+                <button className="bg-yellow-500 hover:bg-yellow-400 text-white font-bold py-2 px-4 border-b-4 border-yellow-700 hover:border-yellow-500 rounded">
+                  Edit
+                </button>
               </Link>
               <Link to={`/genres/${id}/songs/new`}>
-                <button>AddVinyl</button>
+                <button className="bg-black hover:bg-gray-500 text-white font-bold py-2 px-4 border-b-4 border-white hover:border-white rounded">
+                  AddVinyl
+                </button>
               </Link>
-              <button onClick={() => removeSong(songId)}>Delete Song</button>
+              <button
+                className=" bg-red-600 hover:bg-red-500 text-black font-bold py-2 px-4 border-b-4 border-red-900 hover:border-red-400 rounded"
+                onClick={() => removeSong(songId)}
+              >
+                Delete Song
+              </button>
             </div>
           </div>
         )}

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <div className="">
-      <div className="bg-home bg-cover opacity-75">
+      <div className="bg-home bg-cover opacity-75 ">
         <div className="min-h-screen flex flex-col justify-center items-baseline ">
           <h1 className="text-3xl text-red-500 opacity-100 font-extrabold">Are Ya Da Vinly</h1>
           <p className="text-4xl text-black text-left font-extrabold">

@@ -37,7 +37,7 @@ puts "#{Genre.count} Genres created"
                       img_url: 'https://cdn.shopify.com/s/files/1/0105/4542/products/beatles-whitemono2_1200x.jpg?v=1571263785', year: '1968', price: '80', buy: 'https://www.amazon.com/Beatles-White-Album-CD/dp/B07HFZ95Z9', artist: 'The Beatles', genre: @genre2)
 
 @song4 = Song.create!(name: 'Random Access Memories', user: @admin, description: 'Daft Punks new album Random Access Memories finds them leaving behind the highly influential, riff-heavy EDM they originated to luxuriate in the sounds, styles, and production techniques of the 1970s and early 80s.',
-                      img_url: 'https://i1.wp.com/goldrecordoutlet.com/wp-content/uploads/2019/09/DaftPunk_RandomAccessMemories.jpg', buy: 'https://www.amazon.com/dp/B00C061HZY?tag=aurma-20',
+                      img_url: 'https://www.randomaccessmemories.com/images/thomas.jpg', buy: 'https://www.amazon.com/dp/B00C061HZY?tag=aurma-20',
                       year: '2013', price: '73', artist: 'Daft Punk', genre: @genre7)
 
 @song5 = Song.create!(name: 'Rumors', user: @admin, description: 'Fleetwood Mac’s magnum opus and Grammy-winning Album of the year (1978) is a must-own for the music and the story behind it. Up to the recording of the album, the band went through a lot emotionally with inter-band relationships, the divorce of Christie and John McVie, etc.',

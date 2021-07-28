@@ -20,17 +20,14 @@ export default function Login(props) {
   return (
     <div className=" min-h-screen flex flex-col justify-center items-center bg-home bg-cover">
       <form
-        className="lg:bg-white lg:shadow-lg md:shadow-md rounded px-8 pt-6 pb-8 mb-4  md:bg-black"
+        className="lg:shadow-lg md:shadow-md rounded px-8 pt-6 pb-8 mb-4  bg-black"
         onSubmit={event => {
           event.preventDefault();
           handleLogin(formData);
         }}
       >
         <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2 md:text-white"
-            for="username"
-          >
+          <label className="block text-sm font-bold mb-2 text-white" for="username">
             Username:
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
@@ -43,7 +40,7 @@ export default function Login(props) {
           </label>
         </div>
         <div className="mb-6">
-          <label className="block text-gray-700 text-sm font-bold mb-2" for="password">
+          <label className="block text-white text-sm font-bold mb-2">
             Password:
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  mb-3 leading-tight focus:outline-none focus:shadow-outline"
@@ -60,7 +57,7 @@ export default function Login(props) {
             Login
           </button>
           <Link
-            className="inline-block align-baseline font-bold text-sm text-red-500 hover:text-red-800"
+            className="inline-block align-baseline font-bold text-sm text-red-500 hover:text-red-800 underline"
             to="/register"
           >
             Register?

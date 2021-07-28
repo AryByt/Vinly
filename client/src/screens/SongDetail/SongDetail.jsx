@@ -23,12 +23,12 @@ function GenreDetail(props) {
               <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
                 <img className="w-full b" src={song.img_url} alt={song.name} />
                 <div classNae="px-6 py-4">
-                  <div className="font-bold text-xl mb-2">{song.name}</div>
+                  <div className="font-bold text-xl mb-2">Vinyl :{song.name}</div>
                   <h4>{song.description}</h4>
                 </div>
                 <div className="px-6 pt-4 pb-2 bg-black">
                   <span className="inline-block bg-gray-200 rounded-full px-5 py-1 text-sm font-semibold text-gray-700 mr-10 mb-2">
-                    {song.artist}
+                    Artis: {song.artist}
                   </span>
                   <span className="inline-block bg-gray-200 rounded-full px-5 py-1 text-sm font-semibold text-gray-700 ml-10 mb-2">
                     ${song.price}

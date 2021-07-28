@@ -12,31 +12,31 @@ export default function Layout(props) {
           <img className="lg:h-14 sm:h-8 md:h-10" src={logo} alt="logo" />
         </div>
 
-        <header className="uppercase">
+        <header className="uppercase ">
           {currentUser ? (
             <div>
-              <div className="flex flex-row justify-center font-extrabold">
+              <div className="flex flex-row justify-center font-extrabold hover:underline ">
                 <Link to="/home">Vinly</Link>
               </div>
-              <p className="flex flex-row justify-end ">{currentUser.username}</p>
-              <div className="flex flex-row justify-end">
-                <button className="" onClick={handleLogout}>
+              <p className="flex flex-row justify-end hover:underline">{currentUser.username}</p>
+              <div className="flex flex-row justify-end hover:underline">
+                <button className="hover:underline" onClick={handleLogout}>
                   Logout
                 </button>
               </div>
             </div>
           ) : (
             <div className="flex flex-row justify-end">
-              <Link className="px-2" to="/">
+              <Link className="px-2 hover:underline" to="/">
                 Home
               </Link>
-              <Link className="px-2" to="/login">
+              <Link className="px-2 hover:underline" to="/login">
                 Login
               </Link>
-              <Link className="px-2" to="/register">
+              <Link className="px-2 hover:underline" to="/register">
                 Register
               </Link>
-              <Link className="px-2" to="/register">
+              <Link className="px-2 hover:underline" to="/register">
                 AddVinyl
               </Link>
             </div>
@@ -44,14 +44,14 @@ export default function Layout(props) {
           {currentUser && (
             <div>
               <nav className="flex flex-row justify-start">
-                <Link className="px-2" to="/">
+                <Link className="px-2 hover:underline" to="/">
                   Home
                 </Link>
-                <Link className="px-3" to="/genres">
+                <Link className="px-3 hover:underline" to="/genres">
                   Genres
                 </Link>
-                <Link className="px-3" to="/songs">
-                  Vinyls
+                <Link className="px-3 hover:underline" to="/songs">
+                  Vinyl Records
                 </Link>
               </nav>
             </div>

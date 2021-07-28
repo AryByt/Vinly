@@ -1,7 +1,11 @@
 import axios from 'axios';
-('https://vinly-api.herokuapp.com/');
+const baseUrl =
+  process.env.NODE_ENV === 'production'
+    ? 'https://vinly-api.herokuapp.com/'
+    : 'http://localhost:3000';
+
 const api = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: baseUrl,
 });
 
 export default api;

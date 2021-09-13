@@ -1,4 +1,5 @@
 # Vinly README <!-- omit in toc -->
+The Deployed link to Netlify is : https://vinly-app.netlify.app/
 
 > The Project Planning section **should be completed** for your project pitch with instructors.
 >
